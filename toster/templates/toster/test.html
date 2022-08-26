@@ -1,0 +1,50 @@
+﻿{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+  <title></title>
+  <style>
+    body {background-color: #35FFF0;}
+	.fon{background-image: url("{% static 'toster/img/fon.png' %}");
+            background-size: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 800px;
+            width: 700px;}
+	.h  {font-family: Sans-Serif;
+  	     font-size: 16px;
+	     font-weight: bold;}
+	div {margin: auto; text-align: center;}
+	img {width: 700px; height: 180px;}
+	h1 {text-align: center;}
+	table {font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  	       font-size: 16px;
+	       border: 3px solid grey;
+	       border-collapse: collapse;		
+	       margin: auto;
+	       width: 90%;}
+	td {border: 1px solid grey;}
+  </style>
+</head>
+<body>
+<div class="fon">
+<div><img src="{% static 'toster/img/head.png' %}"></div>
+<table><tr><td><a href="{% url 'index' %}">Главная</a></td><td>Тестирование</a></td><td>Результат</a></td></tr></table>
+<h1>Тест "Системы счисления"</h1>
+    <table>
+        <form action="" method="post">{% csrf_token %}
+        <tr><td class="h">Вопросы</td><td class="h">Ответы</td></tr>
+        <tr><td>{{Q1}}</td><td><input type="text" id="A1" name="A1"></td></tr>
+        <tr><td>{{Q2}}</td><td><input type="text" id="A2" name="A2"></td></tr>
+        <tr><td>{{Q3}}</td><td><input type="text" id="A3" name="A3"></td></tr>
+        <tr><td>{{Q4}}</td><td><input type="text" id="A4" name="A4"></td></tr>
+        <tr><td>{{Q5}}</td><td><input type="text" id="A5" name="A5"></td></tr>
+        <tr><td><td><input type="submit" value="Отправить"></td></tr>
+        </form>
+    </table>
+
+
+
+</div> 
+</body>
+</html>
